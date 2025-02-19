@@ -26,7 +26,7 @@ body {
   border: 1px solid #ffffff;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do formulário */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Sombra suave ao redor do formulário */
 }
 
 .cadastro-container h1 {

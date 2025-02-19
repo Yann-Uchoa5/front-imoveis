@@ -4,10 +4,10 @@ import './FormInput.css';
 const FormInput = ({ type, placeholder, value, onChange, required }) => {
   return (
     <input
-      type={type}
+      type={type}        // Agora o tipo é genérico
       placeholder={placeholder}
-      value={value}
-      onChange={onChange}
+      value={value}      // O valor será o valor do estado passado para cada campo
+      onChange={onChange} // A função onChange vem do componente pai para atualizar o estado
       required={required}
       className="form-input"
     />

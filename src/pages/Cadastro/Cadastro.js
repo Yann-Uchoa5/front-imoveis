@@ -5,33 +5,23 @@ import './Cadastro.css';
 import hotel from '../../assets/images/hotel.png'; // Importe a imagem
 
 const Cadastro = () => {
-  const [formData, setFormData] = useState({
-    nome: '',
-    sobrenome: '',
-    email: '',
-    senha: '',
-    confirmarSenha: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const [nome, setNome] = useState('');
+  const [sobrenome, setSobrenome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
+    console.log('Dados do formulário:', { nome, sobrenome, email, senha, confirmarSenha });
     // Aqui você pode adicionar a lógica para enviar os dados para o backend
   };
 
   return (
     <div>
       <Navbar />
-      <div className="cadastro-wrapper"> {/* Novo container para organizar o layout */}
-        <img src={hotel} alt="Hotel" className="imagem-lado" /> {/* Adicione a imagem aqui */}
+      <div className="cadastro-wrapper">
+        <img src={hotel} alt="Hotel" className="imagem-lado" />
         <div className="cadastro-container">
           <h1>Insira seus dados para Cadastro</h1>
           <form onSubmit={handleSubmit}>
@@ -39,10 +29,9 @@ const Cadastro = () => {
               <label>Nome</label>
               <FormInput
                 type="text"
-                name="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
                 placeholder="Digite seu nome"
-                value={formData.nome}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -51,10 +40,9 @@ const Cadastro = () => {
               <label>Sobrenome</label>
               <FormInput
                 type="text"
-                name="sobrenome"
+                value={sobrenome}
+                onChange={(e) => setSobrenome(e.target.value)}
                 placeholder="Digite seu sobrenome"
-                value={formData.sobrenome}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -63,10 +51,9 @@ const Cadastro = () => {
               <label>E-mail</label>
               <FormInput
                 type="email"
-                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Digite seu e-mail"
-                value={formData.email}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -75,10 +62,9 @@ const Cadastro = () => {
               <label>Senha</label>
               <FormInput
                 type="password"
-                name="senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
                 placeholder="Digite sua senha"
-                value={formData.senha}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -87,10 +73,9 @@ const Cadastro = () => {
               <label>Confirmar senha</label>
               <FormInput
                 type="password"
-                name="confirmarSenha"
+                value={confirmarSenha}
+                onChange={(e) => setConfirmarSenha(e.target.value)}
                 placeholder="Confirme sua senha"
-                value={formData.confirmarSenha}
-                onChange={handleChange}
                 required
               />
             </div>
