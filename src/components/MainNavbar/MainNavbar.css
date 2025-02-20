@@ -1,0 +1,46 @@
+.main_navbar {
+  background-color: #f5f5f5;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.main_navbar img {
+  width: 15%;
+  max-width: 11rem;
+}
+
+.main_navbar img:hover {
+  cursor: pointer;
+}
+
+.main_navbar ul {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main_navbar ul a {
+  font-family: "Montserrat Alternates", sans-serif;
+  text-decoration: none;
+  color: #3e466d;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main_navbar ul a:hover {
+  transition: 0.3s;
+  color: #cc8238;
+}
+
+.main_navbar-logo {
+  margin: 0.5rem 0 0.5rem 2rem;
+  height: auto; /* Ajuste o tamanho da imagem conforme necessário */
+  width: auto; /* Mantém a proporção da imagem */
+}
