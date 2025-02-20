@@ -1,0 +1,44 @@
+.banner_container {
+  position: absolute;
+  margin-top: 5rem;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%; /* Ajuste conforme necessário */
+}
+
+.banner_container h1 {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  animation: descida ease-in-out 2s;
+  font-size: 4rem; /* Ajuste o tamanho conforme necessário */
+  color: #3e466d;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0;
+  z-index: 10; /* Para garantir que o texto esteja na frente da imagem */
+}
+
+.banner_container b {
+  color: #cc8238;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.banner-logo {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes descida {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
