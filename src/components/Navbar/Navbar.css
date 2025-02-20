@@ -1,18 +1,19 @@
 .navbar {
-    background-color: #D5E1E9;
-    padding: 15px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: left; /* Centraliza horizontalmente */
-    align-items: left; /* Centraliza verticalmente */
-  }
-  
-  .navbar-logo {
-    height: 40px; /* Ajuste o tamanho da imagem conforme necessário */
-    width: auto; /* Mantém a proporção da imagem */
-  }
+  background-color: #d5e1e9;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: left; /* Centraliza horizontalmente */
+  align-items: left; /* Centraliza verticalmente */
+}
+
+.navbar-logo {
+  margin: 0.5rem 0 0.5rem 2rem;
+  height: 30px; /* Ajuste o tamanho da imagem conforme necessário */
+  width: auto; /* Mantém a proporção da imagem */
+}
