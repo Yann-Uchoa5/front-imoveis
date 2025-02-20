@@ -2,16 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d6e1ec;
-  padding: 40px;
+  background-color: #d5e1e9;
+  padding: 12px;
   color: #2e2e46;
   font-family: "Arial", sans-serif;
   text-align: center;
+  width: 99.4%;
+  height: 100%;
+  margin-top: auto;
 }
 
 .footer-section {
   flex: 1;
-  max-width: 300px;
+  max-width: 400px;
   text-align: center;
 }
 
@@ -29,6 +32,14 @@
 .logo-text {
   max-width: 250px;
   line-height: 1.5;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.footer-text {
+  max-width: 250px;
+  text-align: center;
+  line-height: 1.4;
   font-size: 14px;
   word-wrap: break-word;
 }

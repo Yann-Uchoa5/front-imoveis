@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-section logo-section">
         <img src={logo} alt="Cert" className="logo" />
-        <p>
+        <p className="footer-text">
           Na Casa Certa, conectamos você ao imóvel com praticidade e segurança
         </p>
       </div>
@@ -18,11 +18,11 @@ const Footer = () => {
           <FaWhatsapp /> (88) 1234 - 5678
         </p>
         <p>
-          <FaPhone /> 3427-1845
+          <FaPhone /> (88) 3427 - 1845
         </p>
         <p>
           <FaEnvelope />{" "}
-          <a href="mailto:casacerta@gmail.com">casacerta@gmail.com</a>
+          <a href="mailto:casacerta@gmail.com"> casacerta@gmail.com</a>
         </p>
       </div>
       <div className="footer-section hours-section">

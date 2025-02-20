@@ -10,10 +10,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/cadastrar_imovel" element={<CadastroImovel />} />
-        {/* Adicione uma rota padrão para redirecionar para /cadastro */}
-        <Route path="/" element={<Cadastro />} />
       </Routes>
     </Router>
   );
