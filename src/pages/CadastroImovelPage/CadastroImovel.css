@@ -1,0 +1,67 @@
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.imovel_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.imovel_banner {
+  width: 100%;
+  height: auto;
+}
+
+.imovel_cadastro {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 550px; /* Ajuste conforme a altura do banner */
+  padding-bottom: 20px; /* Espaço para o footer */
+}
+
+.imovel_cadastro h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.imovel_formulario {
+  max-width: 900px; /* Aumentei a largura para 3 colunas */
+  width: 100%;
+  padding: 3rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  gap: 50px; /* Espaço entre os itens */
+}
+
+/* Estilo para os grupos de formulário */
+.form-group {
+  margin-bottom: 0; /* Removi a margem inferior para o grid controlar o espaçamento */
+}
+
+/* Ajustes para os campos que ocupam duas colunas */
+.form-group.double-width {
+  grid-column: span 2; /* Faz o campo ocupar duas colunas */
+}
+
+/* Estilo para os labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #3e466d;
+}
+
+Footer {
+  margin-top: auto;
+}
