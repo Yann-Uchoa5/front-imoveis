@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import FormInput from '../../components/FormInput/FormInput';
-import './Cadastro.css';
-import hotel from '../../assets/images/hotel.png'; // Importe a imagem
+import React, { useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import FormInput from "../../components/FormInput/FormInput";
+import Button from "../../components/Button/Button";
+import "./Cadastro.css";
+import hotel from "../../assets/images/hotel.png"; // Importe a imagem
 
 const Cadastro = () => {
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', { nome, sobrenome, email, senha, confirmarSenha });
+    console.log("Dados do formulário:", {
+      nome,
+      sobrenome,
+      email,
+      senha,
+      confirmarSenha,
+    });
     // Aqui você pode adicionar a lógica para enviar os dados para o backend
   };
 
@@ -35,7 +42,6 @@ const Cadastro = () => {
                 required
               />
             </div>
-
             <div className="form-group">
               <label>Sobrenome</label>
               <FormInput
@@ -46,7 +52,6 @@ const Cadastro = () => {
                 required
               />
             </div>
-
             <div className="form-group">
               <label>E-mail</label>
               <FormInput
@@ -57,7 +62,6 @@ const Cadastro = () => {
                 required
               />
             </div>
-
             <div className="form-group">
               <label>Senha</label>
               <FormInput
@@ -68,7 +72,6 @@ const Cadastro = () => {
                 required
               />
             </div>
-
             <div className="form-group">
               <label>Confirmar senha</label>
               <FormInput
@@ -79,10 +82,7 @@ const Cadastro = () => {
                 required
               />
             </div>
-
-            <button type="submit" className="cadastro-button">
-              Cadastrar
-            </button>
+            <Button>Cadastrar</Button>
           </form>
         </div>
       </div>

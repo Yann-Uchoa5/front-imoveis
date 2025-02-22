@@ -1,27 +1,27 @@
 body {
-  color: #3E466D;
-  font-family: 'Inter', sans-serif;
+  color: #3e466d;
+  font-family: "Inter", sans-serif;
 }
 
 .cadastro-wrapper {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  min-height: 100vh; 
-  gap: 40px; 
-  padding: 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 40px;
+  padding: 20px;
 }
 
 .imagem-lado {
-  max-width: 35%;  
-  height: auto;    
-  border-radius: 8px;  
-  margin-right: 20px;  
+  max-width: 35%;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
 }
 
 .cadastro-container {
-  max-width: 400px;  /* Largura do formulário */
-  width: 100%;  
+  max-width: 400px; /* Largura do formulário */
+  width: 100%;
   padding: 20px;
   border: 1px solid #ffffff;
   border-radius: 10px;
@@ -32,8 +32,8 @@ body {
 .cadastro-container h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: #3E466D;
-  font-family: 'Montserrat Alternates', sans-serif;
+  color: #3e466d;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 20px;
 }
 
@@ -41,22 +41,5 @@ body {
   display: block;
   margin-bottom: 5px;
   font-weight: 500;
-  color: #3E466D;
-}
-
-.cadastro-button {
-  width: 106%;  /* Garantir que o botão ocupe toda a largura do formulário */
-  padding: 10px;
-  background-color: #3E466D;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Montserrat Alternates', sans-serif;
-  margin-top: 20px;
-}
-
-.cadastro-button:hover {
-  background-color: #2a3a59;
+  color: #3e466d;
 }

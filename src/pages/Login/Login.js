@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import FormInput from "../../components/FormInput/FormInput";
 import "./Login.css";
 import hotel from "../../assets/images/hotel.png";
+import Button from "../../components/Button/Button";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -42,10 +43,7 @@ const Login = () => {
                 required
               />
             </div>
-
-            <button type="submit" className="login-button">
-              Entrar
-            </button>
+            <Button>Entrar</Button>
           </form>
         </div>
       </div>

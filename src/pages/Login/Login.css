@@ -44,19 +44,3 @@ body {
   color: #3e466d;
 }
 
-.login-button {
-  width: 106%;
-  padding: 10px;
-  background-color: #3e466d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: "Montserrat Alternates", sans-serif;
-  margin-top: 20px;
-}
-
-.login-button:hover {
-  background-color: #2a3a59;
-}

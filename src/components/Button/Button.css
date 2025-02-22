@@ -1,0 +1,18 @@
+/* Recomendo que use esse botão dentro de uma div */
+
+.button {
+  width: 100%; /* Garantir que o botão ocupe toda a largura do formulário */
+  padding: 10px;
+  background-color: #3e466d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #2a3a59;
+}
