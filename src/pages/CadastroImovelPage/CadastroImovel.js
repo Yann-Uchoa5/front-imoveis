@@ -3,6 +3,7 @@ import WomanBanner from "../../components/WomanBanner/WomanBanner";
 import Footer from "../../components/Footer/Footer";
 import FormInput from "../../components/FormInput/FormInput";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import Button from "../../components/Button/Button";
 import "./CadastroImovel.css";
 import { useState } from "react";
 
@@ -37,6 +38,7 @@ const Cadastro_imovel = () => {
       <section className="imovel_cadastro">
         <h2>Insira os dados para anunciar o seu imóvel</h2>
         <div className="imovel_formulario">
+          <h3>Imóvel</h3>
           {/* Primeira linha: dois campos nas duas primeiras colunas */}
           <div className="form-group ">
             <label>Tipo de imóvel</label>
@@ -57,9 +59,10 @@ const Cadastro_imovel = () => {
           <div className="form-group">
             <label>Fotos</label>
             <FormInput
-              type="text"
+              type="file"
               placeholder="Faça o upload das fotos"
               required
+              id="file-input"
             />
           </div>
           <div className="form-group">
@@ -104,6 +107,37 @@ const Cadastro_imovel = () => {
               required
             />
           </div>
+        </div>
+        <div className="imovel_formulario-localizacao">
+          <h3>Localização</h3>
+          <div className="form-group ">
+            <label>Estado</label>
+            <FormInput
+              type="text"
+              placeholder="Digite o nome do Estado"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Cidade</label>
+            <FormInput
+              type="text"
+              placeholder="Digite o nome da Cidade"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>CEP</label>
+            <FormInput type="number" placeholder="Digite o CEP" required />
+          </div>
+        </div>
+        <div className="formulario_botao">
+          <Button>Anunciar</Button>
+        </div>
+        <div>
+          <h4 className="imovel_ajuda">
+            Precisa de <a href="#ajuda">AJUDA?</a>
+          </h4>
         </div>
       </section>
       <Footer />
