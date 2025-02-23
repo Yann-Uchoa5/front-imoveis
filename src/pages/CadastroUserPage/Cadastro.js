@@ -82,7 +82,7 @@ const Cadastro = () => {
                 required
               />
             </div>
-            <Button>Cadastrar</Button>
+            <Button onClick={handleSubmit}>Cadastrar</Button>
           </form>
         </div>
       </div>

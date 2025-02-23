@@ -12,7 +12,7 @@
 }
 
 .main_navbar img {
-  width: 15%;
+  width: 100%;
   max-width: 11rem;
 }
 
@@ -21,12 +21,13 @@
 }
 
 .main_navbar ul {
+  list-style: none;
   width: 70%;
   display: flex;
   justify-content: space-around;
 }
 
-.main_navbar ul a {
+.main_navbar ul li a {
   font-family: "Montserrat Alternates", sans-serif;
   text-decoration: none;
   color: #3e466d;
@@ -34,7 +35,7 @@
   font-size: 1rem;
 }
 
-.main_navbar ul a:hover {
+.main_navbar ul li a:hover {
   transition: 0.3s;
   color: #cc8238;
 }

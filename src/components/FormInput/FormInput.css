@@ -9,7 +9,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #025ab8;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -28,12 +28,12 @@
   margin: -10px 0;
   border: none;
   border-radius: 5px;
-  background-color: #0056b3;
+  background-color: #000000;
   color: rgb(240, 240, 240);
   font-size: 16px;
   cursor: pointer;
 }
 
 .file-input::-webkit-file-upload-button:hover {
-  background-color: #033b77;
+  background-color: #636363;
 }
