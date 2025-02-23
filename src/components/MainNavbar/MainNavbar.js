@@ -1,16 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MainNavbar.css";
 import logo from "../../assets/images/logo.png"; // Importe a imagem
 
 const MainNavbar = () => {
   return (
     <nav className="main_navbar">
-      <img src={logo} alt="Logo do site" className="main_navbar-logo" />
+      <Link to="">
+        <img src={logo} alt="Logo do site" className="main_navbar-logo" />
+      </Link>
       <ul>
-        <a href="#anunciar">Anunciar Imóvel</a>
-        <a href="#lista_imoveis">Listar Imóveis</a>
-        <a href="#lista_interesse">Lista de Interesses</a>
-        <a href="#perfil">Perfil</a>
+        <li>
+          <Link to="/cadastrar_imovel">Anunciar Imóvel</Link>
+        </li>
+        <li>
+          <Link to="">Listar Imóveis</Link>
+        </li>
+        <li>
+          <Link to="">Lista de Interesses</Link>
+        </li>
+        <li>
+          <Link to="/perfil">Perfil</Link>
+        </li>
       </ul>
     </nav>
   );
