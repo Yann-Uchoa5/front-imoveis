@@ -1,0 +1,51 @@
+.search-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.search-container select,
+.search-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-color: #cc8238;
+}
+
+.search-container button {
+  width: 100px;
+  height: 39px;
+  background-color: #f7931e;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 10%;
+}
+
+.search-container .container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.search-container .container label {
+  color: #3d3d3d;
+  padding-bottom: 10px;
+}
+
+.search-container .gambiarra {
+  display: flex;
+}
+
+.search-container .gambiarra label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-container .buscar {
+  padding-bottom: 30%;
+}

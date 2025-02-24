@@ -1,0 +1,21 @@
+.hero {
+  background: url("../../assets/images/banner.png") no-repeat center;
+  background-size: contain;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.property-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

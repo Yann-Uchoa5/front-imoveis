@@ -6,7 +6,7 @@ import logo from "../../assets/images/logo.png"; // Importe a imagem
 const MainNavbar = () => {
   return (
     <nav className="main_navbar">
-      <Link to="">
+      <Link to="/home">
         <img src={logo} alt="Logo do site" className="main_navbar-logo" />
       </Link>
       <ul>
@@ -14,7 +14,7 @@ const MainNavbar = () => {
           <Link to="/cadastrar_imovel">Anunciar Imóvel</Link>
         </li>
         <li>
-          <Link to="">Listar Imóveis</Link>
+          <Link to="/">Listar Imóveis</Link>
         </li>
         <li>
           <Link to="">Lista de Interesses</Link>

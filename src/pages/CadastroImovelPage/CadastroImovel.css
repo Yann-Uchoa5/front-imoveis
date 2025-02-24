@@ -56,7 +56,6 @@ body {
   border: 0 1px 1px 1px solid #ddd;
   border-radius: 0px 0px 5px 5px;
   background-color: #fff;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Três colunas */
   gap: 50px; /* Espaço entre os itens */
