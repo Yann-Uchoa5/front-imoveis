@@ -1,0 +1,51 @@
+.mural_container {
+  background-color: #d5e1e9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+
+  margin-top: 4.9rem;
+}
+
+.mural_container img {
+  max-width: 30%;
+}
+
+.mural_container h2 {
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.8rem;
+  transform: translateX(-0%);
+  animation: deslizando ease-in-out 2s;
+}
+
+.mural_container h2 b {
+  color: #cc8238;
+  font-size: 2.2rem;
+}
+
+.mural_container .low-text {
+  font-size: 1.8rem;
+}
+
+.mural-logo {
+  width: 10%;
+  padding: 0 3rem 0 7rem;
+}
+
+.mural-casa {
+  width: 30%;
+}
+
+@keyframes deslizando {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-0%);
+    opacity: 1;
+  }
+}

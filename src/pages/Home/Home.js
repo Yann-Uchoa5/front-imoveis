@@ -6,6 +6,7 @@ import casa2 from "../../assets/images/casa2.jpg";
 import apto1 from "../../assets/images/apto1.jpg";
 import casa3 from "../../assets/images/casa3.jpg";
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
+import Mural from "../../components/Mural/Mural";
 
 const Home = () => {
   const properties = [
@@ -47,6 +48,7 @@ const Home = () => {
           <PropertyCard key={index} {...p} />
         ))}
       </div>
+      <Mural />
     </div>
   );
 };
