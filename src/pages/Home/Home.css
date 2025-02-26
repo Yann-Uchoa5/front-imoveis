@@ -9,13 +9,21 @@
   margin-top: 2.5rem;
 }
 
-h2 {
+.home_container h2 {
   text-align: center;
-  margin: 20px 0;
+  margin: 2.5rem 0;
+}
+
+.home_container h2 a {
+  text-decoration: none;
 }
 
 .property-list {
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.property-list b {
+  font-weight: 900;
 }
