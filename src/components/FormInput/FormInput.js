@@ -9,7 +9,7 @@ const FormInput = ({ type, placeholder, value, onChange, required }) => {
       value={value} // O valor será o valor do estado passado para cada campo
       onChange={onChange} // A função onChange vem do componente pai para atualizar o estado
       required={required}
-      className={type == "file" ? "file-input" : "form-input"}
+      className={type === "file" ? "file-input" : "form-input"}
     />
   );
 };
