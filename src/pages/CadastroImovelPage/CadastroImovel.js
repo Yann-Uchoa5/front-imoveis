@@ -47,6 +47,7 @@ const Cadastro_imovel = () => {
       cidade,
       cep,
     });
+    // inserir aqui a lógica do backend
   };
 
   return (

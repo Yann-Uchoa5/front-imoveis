@@ -35,14 +35,22 @@ const PropertyCard = ({
         R$ {price} {type === "Locação" && <i>por mês</i>}
       </strong>
       <div className="buttons">
-        <button className="whatsapp">
-          <FaWhatsapp />
-          WhatsApp
-        </button>
-        <button className="email">
-          <FaEnvelope />
-          E-mail
-        </button>
+        <a href="https://wa.me/5511999999999" rel="noreferrer" target="_blank">
+          <button className="whatsapp">
+            <FaWhatsapp />
+            WhatsApp
+          </button>
+        </a>
+        <a
+          href="mailto:casacerta@gmail.com?subject=Assunto%20do%20Email&body=Estou%20interessado!"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <button className="email">
+            <FaEnvelope />
+            E-mail
+          </button>
+        </a>
       </div>
     </div>
   );
