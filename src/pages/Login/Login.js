@@ -43,6 +43,12 @@ const Login = () => {
                 required
               />
             </div>
+
+            {}
+            <div className="forgot-password">
+              <a href="/recuperar-senha">Esqueceu a senha?</a>
+            </div>
+
             <Button>Entrar</Button>
           </form>
         </div>
