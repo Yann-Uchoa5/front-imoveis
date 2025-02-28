@@ -6,6 +6,7 @@ import CadastroImovel from "../pages/CadastroImovelPage/CadastroImovel";
 import Perfil from "../pages/Perfil/Perfil";
 import Home from "../pages/Home/Home";
 import ListaInteresses from "../pages/ListaInteressesPage/ListaInteresses"
+import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/recuperar-senha" element={<RecoverPassword />} />
         <Route path="/cadastrar_imovel" element={<CadastroImovel />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/home" element={<Home />} />
