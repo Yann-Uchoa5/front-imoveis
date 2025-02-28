@@ -17,7 +17,7 @@ const MainNavbar = () => {
           <Link to="/">Listar Imóveis</Link>
         </li>
         <li>
-          <Link to="">Lista de Interesses</Link>
+          <Link to="/ListaInteresses">Lista de Interesses</Link>
         </li>
         <li>
           <Link to="/perfil">Perfil</Link>
