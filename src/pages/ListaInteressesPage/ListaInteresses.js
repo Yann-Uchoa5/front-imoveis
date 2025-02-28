@@ -38,10 +38,10 @@ const ListaInteresses = () => {
   };
 
   return (
-    <>
+    <> 
       <MainNavbar />
       <br />
-      <div className="container">
+      <div className="containerInteresse">
         <h2>Veja a lista de interesses</h2>
         <table className="tabela-interesses">
           <thead>
