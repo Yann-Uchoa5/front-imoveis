@@ -1,11 +1,12 @@
 .footer-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   background-color: #d5e1e9;
-  padding: 12px;
-  color: #2e2e46;
-  font-family: "Arial", sans-serif;
+  padding: 3rem 1rem;
+  color: #3e466d;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
   text-align: center;
   width: 99.4%;
   height: 100%;
@@ -26,7 +27,7 @@
 
 .logo {
   width: 200px;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 .logo-text {
@@ -39,23 +40,26 @@
 .footer-text {
   max-width: 250px;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.8;
   font-size: 14px;
   word-wrap: break-word;
+  text-align: left;
 }
 
 .contact-section h4,
 .hours-section h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  width: 60%;
 }
 
 .contact-section p,
 .hours-section p {
-  margin: 5px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 5px auto;
+  width: 60%;
+  display: block;
+  text-align: left;
   font-size: 14px;
 }
 

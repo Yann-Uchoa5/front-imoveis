@@ -183,9 +183,9 @@ const Cadastro_imovel = () => {
             <Button onClick={handleSubmit}>Anunciar</Button>
           </div>
           <div>
-            <h4 className="imovel_ajuda">
+            <h2 className="imovel_ajuda">
               Precisa de <a href="#ajuda">AJUDA?</a>
-            </h4>
+            </h2>
           </div>
         </section>
       </form>
