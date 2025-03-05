@@ -7,6 +7,7 @@ import Perfil from "../pages/Perfil/Perfil";
 import Home from "../pages/Home/Home";
 import ListaInteresses from "../pages/ListaInteressesPage/ListaInteresses"
 import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
+import ListarImoveis from "../pages/ListarImovel/ListarImoveis";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/home" element={<Home />} />
         <Route path="/ListaInteresses" element={<ListaInteresses />} />
+        <Route path="/listar_imoveis" element={<ListarImoveis />} />
       </Routes>
     </Router>
   );
