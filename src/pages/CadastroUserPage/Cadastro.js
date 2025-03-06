@@ -1,27 +1,50 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import FormInput from "../../components/FormInput/FormInput";
 import Button from "../../components/Button/Button";
 import "./Cadastro.css";
-import hotel from "../../assets/images/hotel.png"; // Importe a imagem
+import hotel from "../../assets/images/hotel.png";
+
+const URL = process.env.REACT_APP_API_URL;
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
   const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados do formulário:", {
-      nome,
-      sobrenome,
-      email,
-      senha,
-      confirmarSenha,
-    });
-    // Aqui você pode adicionar a lógica para enviar os dados para o backend
+    if (senha !== confirmarSenha) {
+      alert("As senhas não conferem!");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${URL}/usuarios/register`, {
+        nome,
+        email,
+        senha,
+        telefone,
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        alert("Cadastro realizado com sucesso!");
+        navigate("/home")
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+        alert(error.response.data.message);
+      } else {
+        alert("Erro ao cadastrar usuário.");
+      }
+      console.error("Erro ao salvar usuário:", error);
+    }
   };
 
   return (
@@ -43,22 +66,22 @@ const Cadastro = () => {
               />
             </div>
             <div className="form-group">
-              <label>Sobrenome</label>
-              <FormInput
-                type="text"
-                value={sobrenome}
-                onChange={(e) => setSobrenome(e.target.value)}
-                placeholder="Digite seu sobrenome"
-                required
-              />
-            </div>
-            <div className="form-group">
               <label>E-mail</label>
               <FormInput
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Telefone</label>
+              <FormInput
+                type="telefone"
+                value={telefone}
+                onChange={(e) => setTelefone(e.target.value)}
+                placeholder="Digite seu telefone"
                 required
               />
             </div>
