@@ -1,0 +1,94 @@
+/* Container da tabela */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.containerzin {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: "Inter";
+    background-color: white;
+    padding-bottom: 50px;
+    margin-top: 120px;
+  }
+  
+  .anuncio{
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Estilos para a tabela */
+  .imoveis-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white; /* Cor de fundo branca */
+  }
+  
+  .imoveis-table th,
+  .imoveis-table td {
+    padding: 10px;
+    border: none; /* Remove as bordas da tabela */
+    background-color: white;
+  }
+  
+  .imoveis-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    background-color: white;
+  }
+  
+  .imoveis-table td {
+    font-size: 16px;
+    background-color: white;
+  }
+  
+  /* Estilo flexbox para os status */
+  .status-container {
+    display: flex;
+    justify-content: space-between; /* Aplica espaçamento entre os itens */
+    align-items: center;
+  }
+  
+  /* Estilos para o status (ativo e inativo) - botão */
+  .ativo,
+  .inativo {
+    color: white;
+    border: 2px solid;
+    padding: 5px 10px;
+    border-radius: 55px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    min-width: 50px;
+    margin: 0 5px; /* Margem para espaçar os itens */
+  }
+  
+  /* Cor de fundo do status ativo */
+  .ativo {
+    background-color: #94C669;
+    border-color: #94C669;
+  }
+  
+  
+  /* Cor de fundo do status inativo */
+  .inativo {
+    background-color: #CE5757;
+    border-color: #CE5757;
+  }
+  
+  
+  /* Estilos para o cabeçalho da tabela */
+  .imoveis-table thead {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Opcional: adicionar um sombreado leve */
+  .imoveis-table td,
+  .imoveis-table th {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+  

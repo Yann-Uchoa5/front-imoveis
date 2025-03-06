@@ -14,7 +14,7 @@ const MainNavbar = () => {
           <Link to="/cadastrar_imovel">Anunciar Imóvel</Link>
         </li>
         <li>
-          <Link to="/">Listar Imóveis</Link>
+          <Link to="/listar_imoveis">Listar Imóveis</Link>
         </li>
         <li>
           <Link to="/ListaInteresses">Lista de Interesses</Link>
@@ -22,6 +22,7 @@ const MainNavbar = () => {
         <li>
           <Link to="/perfil">Perfil</Link>
         </li>
+        
       </ul>
     </nav>
   );

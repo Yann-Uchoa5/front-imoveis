@@ -9,7 +9,8 @@ const Footer = () => {
       <div className="footer-section logo-section">
         <img src={logo} alt="Cert" className="logo" />
         <p className="footer-text">
-          Na Casa Certa, conectamos você ao imóvel com praticidade e segurança
+          Na Casa Certa, conectamos <br /> você ao imóvel com <br /> praticidade
+          e segurança
         </p>
       </div>
       <div className="footer-section contact-section">

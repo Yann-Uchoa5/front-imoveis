@@ -90,10 +90,10 @@ body {
 
 .imovel_ajuda {
   margin-top: 10rem;
+  text-align: center;
 }
 
 .imovel_ajuda a {
-  font-weight: 600;
   text-decoration: none;
 }
 
