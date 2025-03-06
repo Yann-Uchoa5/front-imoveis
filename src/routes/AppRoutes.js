@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home";
 import ListaInteresses from "../pages/ListaInteressesPage/ListaInteresses"
 import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
 import ListarImoveis from "../pages/ListarImovel/ListarImoveis";
+import Page404 from "../pages/404/Page404";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/ListaInteresses" element={<ListaInteresses />} />
         <Route path="/listar_imoveis" element={<ListarImoveis />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>
   );
