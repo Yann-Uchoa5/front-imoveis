@@ -1,17 +1,43 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import FormInput from "../../components/FormInput/FormInput";
 import "./Login.css";
 import hotel from "../../assets/images/hotel.png";
 import Button from "../../components/Button/Button";
 
-const Login = () => {
+const URL = process.env.REACT_APP_API_URL;
+
+const Login =  () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async  (e) => {
     e.preventDefault();
     console.log("Dados do formulário:", { email, senha });
+
+    try {
+      const response = await axios.post(`${URL}/usuarios/login`, {
+        email,
+        senha,
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        alert("Usuário logado com sucesso!");
+        navigate("/home")
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+        alert(error.response.data.message);
+      } else {
+        alert("Erro ao logar usuário.");
+      }
+      console.error("Erro ao logar usuário:", error);
+    }
   };
 
   return (
