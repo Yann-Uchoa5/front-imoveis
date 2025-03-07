@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import FormInput from "../../components/FormInput/FormInput";
@@ -106,6 +107,9 @@ const Cadastro = () => {
               />
             </div>
             <Button onClick={handleSubmit}>Cadastrar</Button>
+            <Link to="/" className="login-button">
+              Já possui uma conta? Faça o login!
+            </Link>
           </form>
         </div>
       </div>
