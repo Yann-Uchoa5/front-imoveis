@@ -9,6 +9,7 @@ import ListaInteresses from "../pages/ListaInteressesPage/ListaInteresses"
 import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
 import ListarImoveis from "../pages/ListarImovel/ListarImoveis";
 import Page404 from "../pages/404/Page404";
+import PrivateRoute from "../components/PrivateRoute"; 
 
 const AppRoutes = () => {
   return (
@@ -17,11 +18,47 @@ const AppRoutes = () => {
         <Route path="/" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/recuperar-senha" element={<RecoverPassword />} />
-        <Route path="/cadastrar_imovel" element={<CadastroImovel />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/ListaInteresses" element={<ListaInteresses />} />
-        <Route path="/listar_imoveis" element={<ListarImoveis />} />
+        <Route
+          path="/cadastrar_imovel"
+          element={
+            <PrivateRoute>
+              <CadastroImovel />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <PrivateRoute>
+              <Perfil />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ListaInteresses"
+          element={
+            <PrivateRoute>
+              <ListaInteresses />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/listar_imoveis"
+          element={
+            <PrivateRoute>
+              <ListarImoveis />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>
