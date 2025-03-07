@@ -36,7 +36,7 @@ const Cadastro = () => {
 
       if (response.status === 200 || response.status === 201) {
         alert("Cadastro realizado com sucesso!");
-        navigate("/home")
+        navigate("/")
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
