@@ -1,30 +1,27 @@
 import React, { useState } from "react";
-import "./CustomSelect.css"; // Estilos personalizados
+import "./CustomSelect.css";
 
-const CustomSelect = ({ options, placeholder }) => {
-  const [isOpen, setIsOpen] = useState(false); // Controla a visibilidade do dropdown
-  const [selectedOption, setSelectedOption] = useState(null); // Armazena a opção selecionada
+const CustomSelect = ({
+  options,
+  placeholder,
+  value,
+  onChange,
+  required
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Função para alternar a visibilidade do dropdown
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Função para selecionar uma opção
   const handleSelect = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false); // Fecha o dropdown após a seleção
+    onChange(option);
+    setIsOpen(false);
   };
 
   return (
-    <div className="custom-select">
-      {/* Campo de exibição da opção selecionada */}
-      <div className="selected-option" onClick={toggleDropdown}>
-        {selectedOption ? selectedOption.label : placeholder}
+    <div className={`custom-select ${required && !value ? 'required' : ''}`}>
+      <div className="selected-option" onClick={() => setIsOpen(!isOpen)}>
+        {value ? value.label : placeholder}
         <span className="arrow">{isOpen ? "▲" : "▼"}</span>
       </div>
 
-      {/* Dropdown com as opções */}
       {isOpen && (
         <div className="dropdown">
           {options.map((option) => (
