@@ -16,7 +16,6 @@ const Login =  () => {
 
   const navigate = useNavigate();
 
-
   const handleSubmit = async  (e) => {
     e.preventDefault();
     console.log("Dados do formulário:", { email, senha });
@@ -28,6 +27,7 @@ const Login =  () => {
       });
 
       if (response.status === 200 || response.status === 201) {
+        localStorage.setItem("token", response.data.access_token);
         alert("Usuário logado com sucesso!");
         navigate("/home")
       }
