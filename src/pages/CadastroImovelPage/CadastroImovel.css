@@ -101,6 +101,6 @@ Footer {
 
 @media (min-width: 1600px) {
   .imovel_banner {
-    min-height: 50vh; /* Defina a altura mínima desejada */
+    min-height: 70vh;
   }
 }

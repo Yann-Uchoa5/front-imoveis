@@ -1,0 +1,41 @@
+.action-menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.action-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.action-menu {
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+
+}
+
+.action-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #585151;
+    font-size: 14px;
+
+}
+
+.action-menu button:hover {
+    background-color: #f0f0f0;
+}

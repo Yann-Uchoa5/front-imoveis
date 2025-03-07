@@ -5,7 +5,7 @@
 .containerzin {
     width: 80%;
     margin: 20px auto;
-    padding: 10px;
+    padding: 30px;
     font-family: "Inter";
     background-color: white;
     padding-bottom: 50px;
@@ -66,21 +66,7 @@
     min-width: 50px;
     margin: 0 5px; /* Margem para espaçar os itens */
   }
-  
-  /* Cor de fundo do status ativo */
-  .ativo {
-    background-color: #94C669;
-    border-color: #94C669;
-  }
-  
-  
-  /* Cor de fundo do status inativo */
-  .inativo {
-    background-color: #CE5757;
-    border-color: #CE5757;
-  }
-  
-  
+
   /* Estilos para o cabeçalho da tabela */
   .imoveis-table thead {
     border-bottom: 1px solid #ddd;
@@ -92,3 +78,50 @@
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
   }
   
+.status {
+  width: 100%;
+  padding: 10px;
+  border-radius: 500px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+  
+.status.disponivel {
+  background-color: #28a745;
+}
+
+.status.vendido {
+  background-color: #dc3545;
+}
+
+.status.alugado {
+  background-color: #007bff;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}

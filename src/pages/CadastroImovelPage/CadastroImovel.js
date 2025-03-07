@@ -6,6 +6,9 @@ import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import Button from "../../components/Button/Button";
 import "./CadastroImovel.css";
 import { useState } from "react";
+import axios from "axios";
+
+const URL = process.env.REACT_APP_API_URL;
 
 const tipoImovel = [
   { value: "casa", label: "Casa" },
@@ -15,39 +18,66 @@ const tipoImovel = [
 ];
 
 const tipoNegocio = [
-  { value: "compra", label: "Compra" },
+  { value: "venda", label: "Venda" },
   { value: "locacao", label: "Locação" },
 ];
 
 const Cadastro_imovel = () => {
-  const [tipo, setTipo] = useState("");
-  const [formaNegocio, setFormaNegocio] = useState("");
-  const [fotos, setFotos] = useState("");
-  const [linkWhatsapp, setLinkWhatsapp] = useState("");
-  const [linkEmail, setLinkEmail] = useState("");
-  const [nQuartos, setNQuartos] = useState(0);
-  const [nBanheiros, setNBanheiros] = useState(0);
-  const [metrosQuadrados, setMetrosQuadrados] = useState(0);
-  const [estado, setEstado] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [cep, setCep] = useState(0);
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [preco, setPreco] = useState("");
 
-  const handleSubmit = (e) => {
+  const [metrosQuadrados, setMetrosQuadrados] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [cep, setCep] = useState("");
+  const [estado, setEstado] = useState("");
+  const [endereco, setEndereco] = useState("");
+
+  const [quartos, setQuartos] = useState("");
+  const [banheiros, setBanheiros] = useState("");
+
+  const [selectedTipo, setSelectedTipo] = useState(null);
+  const [selectedNegocio, setSelectedNegocio] = useState(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados do formulário:", {
-      tipo,
-      formaNegocio,
-      fotos,
-      linkWhatsapp,
-      linkEmail,
-      nQuartos,
-      nBanheiros,
-      metrosQuadrados,
-      estado,
+    if (!selectedTipo?.value || !selectedNegocio?.value) {
+      alert("Selecione o tipo de imóvel e o tipo de negócio!");
+      return;
+    }
+
+    const data = {
+      titulo,
+      descricao,
+      preco: Number(preco),
+      tipo: selectedTipo.value,
+      tipo_negocio: selectedNegocio.value, 
+      status: "disponivel",
+      area: Number(metrosQuadrados),
       cidade,
-      cep,
-    });
-    // inserir aqui a lógica do backend
+      cep: cep.replace(/\D/g, ''),
+      estado: estado.toUpperCase(),
+      endereco,
+      quartos: Number(quartos),
+      banheiros: Number(banheiros)
+    };
+
+    try {
+      const response = await axios.post(
+        `${URL}/imoveis/create`,
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Resposta do servidor:", response.data);
+      alert("Imóvel cadastrado com sucesso!");
+    } catch (error) {
+      console.error("Erro detalhado:", error.response?.data);
+      alert(`Erro ao cadastrar: ${error.response?.data?.detail || "Verifique os dados"}`);
+    }
   };
 
   return (
@@ -61,127 +91,156 @@ const Cadastro_imovel = () => {
           <h2>Insira os dados para anunciar o seu imóvel</h2>
 
           <div className="imovel_formulario">
-            <h3>Imóvel</h3>
-            {/* Primeira linha: dois campos nas duas primeiras colunas */}
-            <div className="form-group ">
-              <label>Tipo de imóvel</label>
-              <CustomSelect
-                options={tipoImovel}
-                value={tipo}
-                onChange={(e) => setTipo(e.target.value)}
-                placeholder="Selecione o tipo de imóvel..."
-              />
-            </div>
-            <div className="form-group double-width">
-              <label>Forma de negociação</label>
-              <CustomSelect
-                options={tipoNegocio}
-                value={formaNegocio}
-                onChange={(e) => setFormaNegocio(e.target.value)}
-                placeholder="Selecione o tipo de negócio..."
-              />
-            </div>
+            <h3>Informações Básicas</h3>
 
-            {/* Segunda linha: três campos (um em cada coluna) */}
             <div className="form-group">
-              <label>Fotos</label>
-              <FormInput
-                type="file"
-                placeholder="Faça o upload das fotos"
-                value={fotos}
-                onChange={(e) => setFotos(e.target.value)}
-                id="file-input"
-              />
-            </div>
-            <div className="form-group">
-              <label>Link para o Whatsapp</label>
+              <label>Título do Anúncio*</label>
               <FormInput
                 type="text"
-                placeholder="Digite o link para o seu Whatsapp"
-                value={linkWhatsapp}
-                onChange={(e) => setLinkWhatsapp(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Link para o Email</label>
-              <FormInput
-                type="email"
-                placeholder="Digite o link para o seu Email"
-                value={linkEmail}
-                onChange={(e) => setLinkEmail(e.target.value)}
+                placeholder="Ex: Apartamento Moderno no Centro"
+                value={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
                 required
               />
             </div>
 
-            {/* Terceira linha: três campos (um em cada coluna) */}
-            <div className="form-group">
-              <label>Número de quartos</label>
-              <FormInput
-                type="number"
-                placeholder="Digite o número de quartos"
-                value={nQuartos}
-                onChange={(e) => setNQuartos(e.target.value)}
+            <div className="form-group double-width">
+              <label>Descrição Detalhada*</label>
+              <textarea
+                className="form-input"
+                placeholder="Descreva características, localização e diferenciais"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
                 required
               />
             </div>
+
             <div className="form-group">
-              <label>Número de banheiros</label>
+              <label>Preço (R$)*</label>
               <FormInput
                 type="number"
-                placeholder="Digite o número de banheiros"
-                value={nBanheiros}
-                onChange={(e) => setNBanheiros(e.target.value)}
+                placeholder="Valor do imóvel"
+                value={preco}
+                onChange={(e) => setPreco(e.target.value)}
+                min="0"
                 required
               />
             </div>
+
             <div className="form-group">
-              <label>Metros Quadrados</label>
+              <label>Tipo de Imóvel*</label>
+              <CustomSelect
+                options={tipoImovel}
+                value={selectedTipo}
+                onChange={setSelectedTipo}
+                placeholder="Selecione..."
+                isRequired
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Negociação*</label>
+              <CustomSelect
+                options={tipoNegocio}
+                value={selectedNegocio}
+                onChange={setSelectedNegocio}
+                placeholder="Venda ou Locação"
+                isRequired
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Área (m²)*</label>
               <FormInput
                 type="number"
-                placeholder="Digite a metragem do imóvel"
+                placeholder="Metragem total"
                 value={metrosQuadrados}
                 onChange={(e) => setMetrosQuadrados(e.target.value)}
+                min="0"
                 required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Quartos</label>
+              <FormInput
+                type="number"
+                placeholder="Número de quartos"
+                value={quartos}
+                onChange={(e) => setQuartos(e.target.value)}
+                min="0"
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Banheiros</label>
+              <FormInput
+                type="number"
+                placeholder="Número de banheiros"
+                value={banheiros}
+                onChange={(e) => setBanheiros(e.target.value)}
+                min="0"
               />
             </div>
           </div>
+
           <div className="imovel_formulario-localizacao">
             <h3>Localização</h3>
-            <div className="form-group ">
-              <label>Estado</label>
+
+            <div className="form-group">
+              <label>Endereço Completo*</label>
               <FormInput
                 type="text"
-                placeholder="Digite o nome do Estado"
-                value={estado}
-                onChange={(e) => setEstado(e.target.value)}
+                placeholder="Ex: Rua Principal, 123 - Bairro"
+                value={endereco}
+                onChange={(e) => setEndereco(e.target.value)}
                 required
               />
             </div>
+
             <div className="form-group">
-              <label>Cidade</label>
+              <label>CEP*</label>
               <FormInput
                 type="text"
-                placeholder="Digite o nome da Cidade"
+                placeholder="00000-000"
+                value={cep}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, '');
+                  const formatted = value.replace(/(\d{5})(\d{3})/, '$1-$2');
+                  setCep(formatted.substring(0, 9));
+                }}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Cidade*</label>
+              <FormInput
+                type="text"
+                placeholder="Ex: São Paulo"
                 value={cidade}
                 onChange={(e) => setCidade(e.target.value)}
                 required
               />
             </div>
+
             <div className="form-group">
-              <label>CEP</label>
+              <label>Estado (UF)*</label>
               <FormInput
-                type="number"
-                placeholder="Digite o CEP"
-                value={cep}
-                onChange={(e) => setCep(e.target.value)}
+                type="text"
+                placeholder="Ex: SP"
+                value={estado}
+                onChange={(e) => setEstado(e.target.value.toUpperCase())}
+                maxLength="2"
                 required
               />
             </div>
           </div>
+
           <div className="formulario_botao">
-            <Button onClick={handleSubmit}>Anunciar</Button>
+            <Button type="submit">Publicar Anúncio</Button>
           </div>
+
           <div>
             <h2 className="imovel_ajuda">
               Precisa de <a href="#ajuda">AJUDA?</a>
