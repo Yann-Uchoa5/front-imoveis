@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import FormInput from "../../components/FormInput/FormInput";
@@ -70,12 +71,16 @@ const Login =  () => {
               />
             </div>
 
-            {}
+
             <div className="forgot-password">
               <a href="/recuperar-senha">Esqueceu a senha?</a>
             </div>
 
             <Button>Entrar</Button>
+            
+            <Link to="/cadastro" className="login-button">
+              Não possui uma conta? Crie agora!
+            </Link>
           </form>
         </div>
       </div>
