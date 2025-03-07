@@ -12,7 +12,7 @@ body {
 
 .imovel_banner {
   width: 100%;
-  height: auto;
+  min-height: 35rem;
 }
 
 .imovel_cadastro {
@@ -21,8 +21,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 550px; /* Ajuste conforme a altura do banner */
-  padding-bottom: 20px; /* Espaço para o footer */
 }
 
 .imovel_cadastro h2 {
@@ -99,4 +97,10 @@ body {
 
 Footer {
   margin-top: auto;
+}
+
+@media (min-width: 1600px) {
+  .imovel_banner {
+    min-height: 50vh; /* Defina a altura mínima desejada */
+  }
 }
