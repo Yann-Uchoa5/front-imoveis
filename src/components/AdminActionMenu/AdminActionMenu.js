@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./ActionMenu.css";
+import "./AdminActionMenu.css";
 
-const ActionMenu = ({ imovel, onEdit, onDelete }) => {
+const AdminActionMenu = ({ imovel, onEdit, onDelete }) => {
     const [menuAberto, setMenuAberto] = useState(false);
 
     return (
@@ -23,4 +23,4 @@ const ActionMenu = ({ imovel, onEdit, onDelete }) => {
     );
 };
 
-export default ActionMenu;
+export default AdminActionMenu;
