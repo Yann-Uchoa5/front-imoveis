@@ -1,6 +1,7 @@
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import WomanBanner from "../../components/WomanBanner/WomanBanner";
 import Footer from "../../components/Footer/Footer";
+
 import FormInput from "../../components/FormInput/FormInput";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import Button from "../../components/Button/Button";
@@ -19,23 +20,18 @@ const tipoImovel = [
 
 const tipoNegocio = [
   { value: "venda", label: "Venda" },
-  { value: "locacao", label: "Locação" },
+  { value: "aluguel", label: "Locação" },
 ];
 
 const Cadastro_imovel = () => {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [preco, setPreco] = useState("");
-
   const [metrosQuadrados, setMetrosQuadrados] = useState("");
   const [cidade, setCidade] = useState("");
   const [cep, setCep] = useState("");
   const [estado, setEstado] = useState("");
   const [endereco, setEndereco] = useState("");
-
-  const [quartos, setQuartos] = useState("");
-  const [banheiros, setBanheiros] = useState("");
-
   const [selectedTipo, setSelectedTipo] = useState(null);
   const [selectedNegocio, setSelectedNegocio] = useState(null);
 
@@ -51,15 +47,13 @@ const Cadastro_imovel = () => {
       descricao,
       preco: Number(preco),
       tipo: selectedTipo.value,
-      tipo_negocio: selectedNegocio.value, 
+      tipo_negocio: selectedNegocio.value,
       status: "disponivel",
       area: Number(metrosQuadrados),
       cidade,
       cep: cep.replace(/\D/g, ''),
       estado: estado.toUpperCase(),
-      endereco,
-      quartos: Number(quartos),
-      banheiros: Number(banheiros)
+      endereco
     };
 
     try {
@@ -160,28 +154,6 @@ const Cadastro_imovel = () => {
                 required
               />
             </div>
-
-            <div className="form-group">
-              <label>Quartos</label>
-              <FormInput
-                type="number"
-                placeholder="Número de quartos"
-                value={quartos}
-                onChange={(e) => setQuartos(e.target.value)}
-                min="0"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Banheiros</label>
-              <FormInput
-                type="number"
-                placeholder="Número de banheiros"
-                value={banheiros}
-                onChange={(e) => setBanheiros(e.target.value)}
-                min="0"
-              />
-            </div>
           </div>
 
           <div className="imovel_formulario-localizacao">
@@ -242,12 +214,13 @@ const Cadastro_imovel = () => {
           </div>
 
           <div>
-            <h2 className="imovel_ajuda">
-              Precisa de <a href="#ajuda">AJUDA?</a>
-            </h2>
+
           </div>
         </section>
       </form>
+      <h2 className="imovel_ajuda">
+        Precisa de <a href="#ajuda">AJUDA?</a>
+      </h2>
       <Footer />
     </div>
   );

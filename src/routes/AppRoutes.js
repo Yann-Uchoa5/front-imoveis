@@ -5,11 +5,11 @@ import Cadastro from "../pages/CadastroUserPage/Cadastro";
 import CadastroImovel from "../pages/CadastroImovelPage/CadastroImovel";
 import Perfil from "../pages/Perfil/Perfil";
 import Home from "../pages/Home/Home";
-import ListaInteresses from "../pages/ListaInteressesPage/ListaInteresses"
 import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
 import ListarImoveis from "../pages/ListarImovel/ListarImoveis";
 import Page404 from "../pages/404/Page404";
-import PrivateRoute from "../components/PrivateRoute"; 
+import PrivateRoute from "./PrivateRoute"; 
+import { isAdmin } from "../utils/auth";
 
 const AppRoutes = () => {
   return (
@@ -21,9 +21,15 @@ const AppRoutes = () => {
         <Route
           path="/cadastrar_imovel"
           element={
-            <PrivateRoute>
-              <CadastroImovel />
-            </PrivateRoute>
+            isAdmin() ? (
+              <PrivateRoute>
+                <CadastroImovel />
+              </PrivateRoute>
+            ) : (
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            )
           }
         />
         <Route
@@ -37,19 +43,18 @@ const AppRoutes = () => {
         <Route
           path="/home"
           element={
-            <PrivateRoute>
-              <Home />
-            </PrivateRoute>
+            isAdmin() ? (
+              <PrivateRoute>
+                <CadastroImovel />
+              </PrivateRoute>
+            ) : (
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            )
           }
         />
-        <Route
-          path="/ListaInteresses"
-          element={
-            <PrivateRoute>
-              <ListaInteresses />
-            </PrivateRoute>
-          }
-        />
+      
         <Route
           path="/listar_imoveis"
           element={

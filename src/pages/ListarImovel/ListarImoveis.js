@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import Footer from "../../components/Footer/Footer";
-import ActionMenu from "../../components/ActionMenu/ActionMenu";
+import AdminActionMenu from "../../components/AdminActionMenu/AdminActionMenu";
 import "./ListarImoveis.css";
 import ImovelEditModal from "../../components/Modal/ImovelEditModal";
 import ConfirmDialog from "../../components/ConfirmDialog/ConfirmDialog";
+import CustomerActionMenu from "../../components/CustomerActionMenu/CustomerActionMenu";
+import { isAdmin } from "../../utils/auth";
 
 const URL = process.env.REACT_APP_API_URL;
 
@@ -24,6 +26,14 @@ const ListarImoveis = () => {
     preco: "",
     status: ""
   });
+
+  const handleEmailContact = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
+  const handleWhatsappContact = (numero) => {
+    window.open(`https://wa.me/${numero}`, '_blank');
+  };
 
   const [confirmDialog, setConfirmDialog] = useState({
     isOpen: false,
@@ -115,7 +125,7 @@ const ListarImoveis = () => {
       <MainNavbar />
 
       <div className="containerzin">
-      
+
         <h2 className="anuncio">Veja os imóveis anunciados!</h2>
         <table className="imoveis-table">
           <thead>
@@ -130,7 +140,15 @@ const ListarImoveis = () => {
               <th>Área</th>
               <th>Preço</th>
               <th>Status</th>
-              <th>Ações</th>
+              <th>{
+                isAdmin()
+                 ? (
+                    <th>Ações</th>
+                  ) : (
+                    <th>Contato</th>
+                  )
+  
+              }</th>
             </tr>
           </thead>
           <tbody>
@@ -170,19 +188,29 @@ const ListarImoveis = () => {
 
                 </td>
                 <td>
-                  <ActionMenu
-                    imovel={imovel}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete} />
+                  {isAdmin() ? (
+                    <AdminActionMenu
+                      imovel={imovel}
+                      onEdit={handleEdit}
+                      onDelete={handleDelete} />
+                  ) : (
+                      <CustomerActionMenu
+                        whatsapp={imovel.contato_whatsapp}
+                        email={imovel.contato_email}
+                        onEmail={handleEmailContact}
+                        onWhatsapp={handleWhatsappContact}
+                      />
+                  )
+                }
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p className="paragraph">
-        Precisa de <strong>Ajuda?</strong>
-      </p>
+      <h2 className="imovel_ajuda">
+        Precisa de <a href="#ajuda">AJUDA?</a>
+      </h2>
 
       <Footer />
 

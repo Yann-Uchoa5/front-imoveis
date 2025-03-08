@@ -71,7 +71,7 @@ const ImovelEditModal = ({ imovel, formData, onInputChange, onSubmit, onClose })
                             onChange={onInputChange}
                         >
                             <option value="venda">Venda</option>
-                            <option value="locacao">Locação</option>
+                            <option value="aluguel">Locação</option>
                         </select>
                     </label>
                     <label>
